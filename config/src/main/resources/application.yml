@@ -5,5 +5,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/wengmd07/scloudk8scfg.git
+          uri: https://github.com/xiaoluoge11/springcloud_congfig.git
           search-paths: config-repo

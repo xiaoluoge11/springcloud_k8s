@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: config-server
-        image: devops/config:v2.0
+        image: devops/config:v3.0
         imagePullPolicy: IfNotPresent
         env:
         - name: AUTHOR
