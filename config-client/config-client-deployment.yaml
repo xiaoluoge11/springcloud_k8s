@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-client
+  template:
+    metadata:
+      labels:
+        app: config-client
+    spec:
+      containers:
+      - name: config-client
+        image: devops/config-client:v2.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: AUTHOR
+          value: config-client
+          name: EUREKA_SERVER
+          value: "http://eureka-0.eureka:8761/eureka/,http://eureka-1.eureka:8761/eureka/,http://eureka-2.eureka:8761/eureka/"
+        ports:
+        - containerPort: 13000
