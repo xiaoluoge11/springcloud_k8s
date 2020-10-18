@@ -1,5 +1,8 @@
-FROM devops/jdk:v1 
+FROM devops/jdk:v1
 VOLUME /tmp
-ADD target/scloudk8s.config.client-1.0-SNAPSHOT.jar app.jar
-RUN touch /app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ADD target/*.jar app.jar
+RUN sh -c 'touch /app.jar'
+ENV JVM_OPTS="-Xss256k -Duser.timezone=Asia/Shanghai -Djava.security.egd=file:/dev/./urandom"
+ENV JAVA_OPTS=""
+ENV APP_OPTS=""
+ENTRYPOINT [ "sh", "-c", "java $JVM_OPTS $JAVA_OPTS -jar /app.jar $APP_OPTS" ]

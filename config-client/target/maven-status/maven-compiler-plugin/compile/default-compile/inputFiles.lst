@@ -1,2 +1,2 @@
-/opt/springcloudk8s/config-client/src/main/java/com/wmd/scloudk8s/config/client/controller/HelloController.java
-/opt/springcloudk8s/config-client/src/main/java/com/wmd/scloudk8s/config/client/SpringCloudConfigClientApplication.java
+/opt/springcloud_k8s/config-client/src/main/java/com/wmd/scloudk8s/config/client/SpringCloudConfigClientApplication.java
+/opt/springcloud_k8s/config-client/src/main/java/com/wmd/scloudk8s/config/client/controller/HelloController.java

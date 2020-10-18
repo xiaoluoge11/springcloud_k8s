@@ -3,7 +3,7 @@ spring:
     config:
       name: config-client
       profile: dev
-      label: master
+      label: main
       discovery:
         enabled: true
         service-id: config-server

@@ -14,12 +14,16 @@ spec:
     spec:
       containers:
       - name: config-server
-        image: devops/config:v3.0
+        image: devops/conf:v1
         imagePullPolicy: IfNotPresent
         env:
         - name: AUTHOR
           value: config-server
         - name: EUREKA_SERVER
           value: "http://eureka-0.eureka:8761/eureka/,http://eureka-1.eureka:8761/eureka/,http://eureka-2.eureka:8761/eureka/"
+        - name: GIT_SERVER
+          value: "https://github.com/xiaoluoge11/springcloud_congfig"
+        - name: CONFIG_PATH
+          value: "config-repo"
         ports:
         - containerPort: 12000
